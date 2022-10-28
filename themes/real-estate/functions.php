@@ -1,8 +1,17 @@
-?php 
+<?php 
 // Logique du thème
 
 // Support de logo custom
 add_theme_support('custom-logo');
+
+function add_style_scripts() {
+    // script file
+    wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+    // script file
+    wp_enqueue_script("main-file", get_template_directory_uri() ."./assets/js/main.js");
+}
+
 
 // enregistrer un emplacement de menu
 function registerMenus(){
@@ -14,11 +23,6 @@ function registerMenus(){
 add_action( 'after_setup_theme', 'registerMenus', 0 );
 
 
-// Mettre les assets css en file d'attente
-function add_theme_css_and_js(){
-	wp_enqueue_style('main-css', get_stylesheet_uri());
-}
-add_action('wp_enqueue_scripts', 'add_theme_css_and_js');
 
 
 function getIcon($icon){
