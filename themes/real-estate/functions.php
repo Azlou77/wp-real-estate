@@ -4,13 +4,31 @@
 // Support de logo custom
 add_theme_support('custom-logo');
 
+//Enrengistre  les styles et scripts
 function add_style_scripts() {
-    // script file
+    // style file
     wp_enqueue_style( 'style', get_stylesheet_uri() );
 
     // script file
-    wp_enqueue_script("main-file", get_template_directory_uri() ."./assets/js/main.js");
+    wp_enqueue_script("main", get_template_directory_uri() ."./assets/js/main.js");
 }
+
+//Ajout d'images depuis WP ADMIN
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'your-custom-size' => __( 'Your Custom Size Name' ),
+    ) );
+}
+//Récupère le titre et la détails d'images depuis WP ADMIN
+function get_post_meta( $post_id, $key = '', $single = false ) {
+	return get_metadata( 'post', $post_id, $key, $single );
+        //wp_get_attachment_metadata();
+}
+
+    
+
+             
 
 
 // enregistrer un emplacement de menu
