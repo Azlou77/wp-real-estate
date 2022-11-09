@@ -8,17 +8,21 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 		<header id="site-header">
 			<div class="container">
-				<?php 
 				// Afficher le menu principal
-				if ( has_nav_menu('primary_menu')){
-					wp_nav_menu([
-							'theme_location' => 'primary_menu',
-							'container' => 'nav',
-							'container_class' => 'main-nav'
-						]);
-				}
-				?>
-			</div>
-		</header>
+				<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', '_s' ); ?></button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'container' => 'nav',
+					'container_class' => 'main-nav'
+				)
+			);
+			?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->		

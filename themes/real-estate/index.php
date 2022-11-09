@@ -4,7 +4,7 @@
     <h2><?php bloginfo( 'description' ); ?></h2>				
     <main id="site-content">
         <div class="container">
-            <!-- <?php include('template-parts/gallery-card.php'); ?> -->
+             <?php include('template-parts/gallery-card.php'); ?> 
         </div>
     </main>
 </body>

@@ -35,11 +35,12 @@
     <?php while ( have_posts() ) : the_post(); ?>
         <div class="gallery" id="sell">      
             <div class="image">
-                    <img class="image__img" alt="Brics" src="<?php the_post_thumbnail(); ?>" />
+                <?php the_post_thumbnail() ?>
+                    <img class="image__img" alt="Brics" src=""   />
                         <div class="image__overlay image__overlay--primary">
                             <div class="image__description">
-                                <p class="image__title"><?php the_title ?></p>
-                                <p class="image__details"><?php the_content ?></p>
+                                <p class="image__title"><?php the_title() ?></p>
+                                <p class="image__details"><?php the_content() ?></p>
                             </div>
                         </div>
             </div>

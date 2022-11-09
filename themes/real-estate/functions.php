@@ -4,6 +4,11 @@
 // Support de logo custom
 add_theme_support('custom-logo');
 
+
+// Support de logo custom
+add_theme_support('post-thumbnails');
+
+
 //Enrengistre  les styles et scripts
 function add_style_scripts() {
     // style file
