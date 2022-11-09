@@ -1,5 +1,5 @@
 /*
-Theme Name: WP-ESTATE theme
+Theme Name:  real_estate
 Theme URI: http/localhost
 Author: Nguyen Louis
 Author URI:  http/localhost
@@ -13,60 +13,4 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: 
 Tags: maisons, promotion, immobiliers 
 */
-  #sell.gallery .image {
-    position: relative;
-    width: 374.333px;
-		height:249.1px;
-}
-#sell.gallery .image__img {
-    display: block;
-   	width: 374.333px;
-		height:249.1px;
-		object-fit:cover;
-}
 
-#sell.gallery .image__details{
-	margin-bottom:0px;
-	text-align:center;
-	color:#333;
-	opacity:.7;
-	letter-spacing:1px;
-}
-/*gallery js overlay*/
-.image__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 374.333px;
-		height:249.1px;
-    background: rgba(0, 0, 0, 0.6);
-    color: #ffffff;
-    font-family: 'Quicksand', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.25s;
-}
-
-.image__overlay--blur {
-    backdrop-filter: blur(5px);
-}
-
-.image__overlay--primary {
-    background:black;
-}
-
-.image__overlay > * {
-    transform: translateY(20px);
-    transition: transform 0.25s;
-}
-
-.image__overlay:hover {
-    opacity: 1;
-}
-
-.image__overlay:hover > * {
-    transform: translateY(0);
-}
