@@ -1,7 +1,7 @@
-<div class="gallery" id="sell">
-        //Gallery images
+ <!-- //Gallery images
+<div class="gallery" id="sell">      
         <div class="image">
-            <img class="image__img" alt="Brics" src="<?php my_custom_sizes('image_size_names_chooses', 'my_custom_sizes'); ?>/>
+            <img class="image__img" alt="Brics" src=""   />
             <div class="image__overlay image__overlay--primary">
             <div class="image__description">
                 <p class="image__title">Night House</p>
@@ -30,4 +30,21 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+<?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+        <div class="gallery" id="sell">      
+            <div class="image">
+                    <img class="image__img" alt="Brics" src="<?php the_post_thumbnail(); ?>" />
+                        <div class="image__overlay image__overlay--primary">
+                            <div class="image__description">
+                                <p class="image__title"><?php the_title ?></p>
+                                <p class="image__details"><?php the_content ?></p>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    <?php endwhile; ?>
+<?php else: ?>
+    _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+<?php endif; ?>

@@ -13,18 +13,18 @@ function add_style_scripts() {
     wp_enqueue_script("main", get_template_directory_uri() ."./assets/js/main.js");
 }
 
-//Ajout d'images depuis WP ADMIN
-add_filter( 'image_size_names_choose', 'my_custom_sizes' );
-function my_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'your-custom-size' => __( 'Your Custom Size Name' ),
-    ) );
-}
-//Récupère le titre et la détails d'images depuis WP ADMIN
-function get_post_meta( $post_id, $key = '', $single = false ) {
-	return get_metadata( 'post', $post_id, $key, $single );
-        //wp_get_attachment_metadata();
-}
+// //Ajout d'images depuis WP ADMIN
+// add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+// function my_custom_sizes( $sizes ) {
+//     return array_merge( $sizes, array(
+//         'your-custom-size' => __( 'Your Custom Size Name' ),
+//     ) );
+// }
+// //Récupère le titre et la détails d'images depuis WP ADMIN
+// function get_post_meta( $post_id, $key = '', $single = false ) {
+// 	return get_metadata( 'post', $post_id, $key, $single );
+//         //wp_get_attachment_metadata();
+// }
 
     
 
