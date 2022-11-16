@@ -48,8 +48,17 @@ function agents_custom_post_type() {
 				'name'          => __('Agents', 'textdomain'),
 				'singular_name' => __('Agents', 'textdomain'),
 			),
-				'public'      => true,
-				'has_archive' => true,
+                'menu_position'=> 4,
+				'public'       => true,
+				'has_archive'  => true,
+                'menu_icon'    => 'dashicons-admin-users',
+                'supports'=>
+                [
+                    'title',
+                    'editor',
+                    'thumbnail',
+                    'comments',
+                ]
 		)
 	);
 }
@@ -60,11 +69,20 @@ function properties_custom_post_type() {
 	register_post_type('properties_product',
 		array(
 			'labels'      => array(
-				'name'          => __('properties', 'textdomain'),
-				'singular_name' => __('properties', 'textdomain'),
+				'name'          => __('Properties', 'textdomain'),
+				'singular_name' => __('Properties', 'textdomain'),
 			),
+                'menu_position'=> 5,
 				'public'      => true,
 				'has_archive' => true,
+                'menu_icon'    => 'dashicons-building',
+                'supports'=>
+                [
+                    'title',
+                    'editor',
+                    'thumbnail',
+                    'comments',
+                ]
 		)
 	);
 }

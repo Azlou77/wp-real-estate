@@ -7,7 +7,8 @@
         <div class="row d-flex justify-content-around">
              <?php include('template-parts/gallery-card.php'); ?>
              <?php include('template-parts/gallery-card2.php'); ?> 
-             <?php include('template-parts/gallery-card3.php'); ?>  
+             <?php include('template-parts/gallery-card3.php'); ?>
+             <?php include('template-parts/test.php'); ?>    
         </div>
     </main>
 </body>
