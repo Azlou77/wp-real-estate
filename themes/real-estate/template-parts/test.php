@@ -15,7 +15,7 @@ if ( $arr_posts->have_posts() ) :
     while ( $arr_posts->have_posts() ) :
         $arr_posts->the_post();
         ?>
-        <div class="row ">
+        <div class="row" style="margin-bottom:107px;">
             <div class="col-8 justify-content-start">
                 <h1 class="d-flex justify-content-start"><?php the_title() ?></h1>
                     <h2 class="d-flex justify-content-start">About</h2>
@@ -27,6 +27,28 @@ if ( $arr_posts->have_posts() ) :
                 the_post_thumbnail('medium', ['class'=> 'card-img-top ', 'style'=>'object-fit:cover; height:261px; width:230px']) ;
             endif;
             ?>
+                 <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        
+
             
       
         <?php
