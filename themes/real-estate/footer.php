@@ -2,7 +2,7 @@
 			<div class="container">
 				<!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted">
-
+	
 
     <!-- Right -->
     <div>

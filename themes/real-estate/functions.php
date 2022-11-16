@@ -28,12 +28,6 @@ function real_estate_register_assets() {
         wp_enqueue_script('bootstrap');
 }
 
-
-    
-
-             
-
-
 // enregistrer un emplacement de menu
 function registerMenus(){
 	register_nav_menus( array(
@@ -45,7 +39,36 @@ function registerMenus(){
 add_action( 'after_setup_theme', 'real_estate_supports' );
 add_action('wp_enqueue_scripts', 'real_estate_register_assets');
 
+//Templates pour les articles seuls
+//Templates pour les articles seuls des Agents
+function agents_custom_post_type() {
+	register_post_type('agents_product',
+		array(
+			'labels'      => array(
+				'name'          => __('Agents', 'textdomain'),
+				'singular_name' => __('Agents', 'textdomain'),
+			),
+				'public'      => true,
+				'has_archive' => true,
+		)
+	);
+}
+add_action('init', 'agents_custom_post_type');
 
+//Templates pour les articles seuls des Properties
+function properties_custom_post_type() {
+	register_post_type('properties_product',
+		array(
+			'labels'      => array(
+				'name'          => __('properties', 'textdomain'),
+				'singular_name' => __('properties', 'textdomain'),
+			),
+				'public'      => true,
+				'has_archive' => true,
+		)
+	);
+}
+add_action('init', 'properties_custom_post_type');
 
 
 
