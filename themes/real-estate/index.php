@@ -13,6 +13,4 @@
     </main>
 </body>
 <?php get_footer(); ?>
-
-	
 	

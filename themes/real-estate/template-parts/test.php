@@ -27,10 +27,14 @@ if ( $arr_posts->have_posts() ) :
                 the_post_thumbnail('medium', ['class'=> 'card-img-top ', 'style'=>'object-fit:cover; height:261px; width:230px']) ;
             endif;
             ?>
-                 <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            </div>
+        </div>
+
+        <div class="row mt-5 d-flex justify-content-end ">
+                    <!-- Grid column -->
+        <div class="col-4 ">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="text-uppercase fw-bold mb-4 ">
             Products
           </h6>
           <p>
@@ -48,6 +52,8 @@ if ( $arr_posts->have_posts() ) :
         </div>
         <!-- Grid column -->
         
+            </div>
+           
 
             
       
