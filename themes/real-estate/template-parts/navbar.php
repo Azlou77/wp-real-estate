@@ -11,9 +11,8 @@
 				)
 			);
 			?>
-  <i class="logo">
-  <a href="#"><?= getIcon('user'); ?></a>
-  </i>
+  
+
   </div>
   <br>
 </nav>
