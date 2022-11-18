@@ -3,7 +3,6 @@
 $args = array(
     'post_type' => 'agents',
     'post_status' => 'publish',
-    'category_name' => 'Agents',
     'posts_per_page' => 1,
 );
 $arr_posts = new WP_Query( $args );

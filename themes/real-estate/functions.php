@@ -42,7 +42,7 @@ add_action('wp_enqueue_scripts', 'real_estate_register_assets');
 //Templates pour les articles seuls
 //Templates pour les articles seuls des Agents
 function agents_custom_post_type() {
-	register_post_type('agents_product',
+	register_post_type('agents',
 		array(
 			'labels'      => array(
 				'name'          => __('Agents', 'textdomain'),
@@ -67,17 +67,17 @@ add_action('init', 'agents_custom_post_type');
 
 //Templates pour les articles seuls des Properties
 function properties_custom_post_type() {
-	register_post_type('properties_product',
+	register_post_type('properties',
 		array(
 			'labels'      => array(
 				'name'          => __('Properties', 'textdomain'),
-				'singular_name' => __('Properties', 'textdomain'),
+				'singular_name' => __('Propertie', 'textdomain'),
 			),
                 'menu_position'=> 5,
 				'public'      => true,
 				'has_archive' => true,
                 'menu_icon'    => 'dashicons-building',
-                'taxonomies'  => array( 'Houses', 'Apartments', 'Rent', 'Buy'),
+                'taxonomies' => array('types','purposes'),
                 'supports'=>
                 [
                     'title',
@@ -88,25 +88,50 @@ function properties_custom_post_type() {
 		)
 	);
 }
-//Taxonomies pour les articles seuls des Properties
 add_action('init', 'properties_custom_post_type');
-register_taxonomy('book_genre', ['book'], [
-    'label' => __('Genres', 'txtdomain'),
+//Taxonomies pour les articles seuls des Properties
+//Category Types
+register_taxonomy('Types', ['properties'], [
+    'label' => __('Types', 'txtdomain'),
     'hierarchical' => true,
-    'rewrite' => ['slug' => 'book-genre'],
+    'rewrite' => ['slug' => 'types'],
     'show_admin_column' => true,
     'show_in_rest' => true,
     'labels' => [
-        'singular_name' => __('Genre', 'txtdomain'),
-        'all_items' => __('All Genres', 'txtdomain'),
-        'edit_item' => __('Edit Genre', 'txtdomain'),
-        'view_item' => __('View Genre', 'txtdomain'),
-        'update_item' => __('Update Genre', 'txtdomain'),
-        'add_new_item' => __('Add New Genre', 'txtdomain'),
-        'new_item_name' => __('New Genre Name', 'txtdomain'),
-        'search_items' => __('Search Genres', 'txtdomain'),
-        'parent_item' => __('Parent Genre', 'txtdomain'),
-        'parent_item_colon' => __('Parent Genre:', 'txtdomain'),
-        'not_found' => __('No Genres found', 'txtdomain'),
+        'singular_name' => __('Types', 'txtdomain'),
+        'all_items' => __('All Types', 'txtdomain'),
+        'edit_item' => __('Edit Types', 'txtdomain'),
+        'view_item' => __('View Types', 'txtdomain'),
+        'update_item' => __('Update Types', 'txtdomain'),
+        'add_new_item' => __('Add New Types', 'txtdomain'),
+        'new_item_name' => __('New Types Name', 'txtdomain'),
+        'search_items' => __('Search Types', 'txtdomain'),
+        'parent_item' => __('Parent Types', 'txtdomain'),
+        'parent_item_colon' => __('Parent Types:', 'txtdomain'),
+        'not_found' => __('No Types found', 'txtdomain'),
     ]
 ]);
+register_taxonomy_for_object_type('Types', 'properties');
+
+//Category Types
+register_taxonomy('Purposes', ['properties'], [
+    'label' => __('Purposes', 'txtdomain'),
+    'hierarchical' => true,
+    'rewrite' => ['slug' => 'purposes'],
+    'show_admin_column' => true,
+    'show_in_rest' => true,
+    'labels' => [
+        'singular_name' => __('Purposes', 'txtdomain'),
+        'all_items' => __('All Purposes', 'txtdomain'),
+        'edit_item' => __('Edit Purposes', 'txtdomain'),
+        'view_item' => __('View Purposes', 'txtdomain'),
+        'update_item' => __('Update Purposes', 'txtdomain'),
+        'add_new_item' => __('Add New Purposes', 'txtdomain'),
+        'new_item_name' => __('New Purposes Name', 'txtdomain'),
+        'search_items' => __('Search Purposes', 'txtdomain'),
+        'parent_item' => __('Parent Purposes', 'txtdomain'),
+        'parent_item_colon' => __('Parent Purposes:', 'txtdomain'),
+        'not_found' => __('No Purposes found', 'txtdomain'),
+    ]
+]);
+register_taxonomy_for_object_type('Purposes', 'properties');
