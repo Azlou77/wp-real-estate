@@ -25,6 +25,10 @@ if ( $arr_posts->have_posts() ) :
             <h5 class="card-title text-center align-center"><?php the_title() ?></h5>
             <p class="card-text"><?php the_content() ?></p>
         </div>
+        <div class="card-body">
+            <h5 class="card-title text-center align-center"><?php the_title() ?></h5>
+            <p class="card-text"><?php the_content() ?></p>
+        </div>
         </div>  
         <?php
     endwhile;
