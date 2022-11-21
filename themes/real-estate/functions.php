@@ -9,6 +9,9 @@ function real_estate_supports(){
     add_theme_support('post-thumbnails');
     //Support des menus
     add_theme_support('menus');
+    add_image_size('post-thumbnail', 347, 260, true);
+    add_image_size('large', 255, 300, true);
+
 }
 
 //Enrengistre  les styles et scripts
@@ -28,7 +31,7 @@ function real_estate_register_assets() {
         wp_enqueue_script('bootstrap');
 }
 
-// enregistrer un emplacement de menu
+//Enregistrer un emplacement de menu
 function registerMenus(){
 	register_nav_menus( array(
 	    'primary_menu' => __( 'Primary Menu', 'text_domain' ),
@@ -38,100 +41,3 @@ function registerMenus(){
 
 add_action( 'after_setup_theme', 'real_estate_supports' );
 add_action('wp_enqueue_scripts', 'real_estate_register_assets');
-
-//Templates pour les articles seuls
-//Templates pour les articles seuls des Agents
-function agents_custom_post_type() {
-	register_post_type('agents',
-		array(
-			'labels'      => array(
-				'name'          => __('Agents', 'textdomain'),
-				'singular_name' => __('Agents', 'textdomain'),
-			),
-                'menu_position'=> 4,
-				'public'       => true,
-				'has_archive'  => true,
-                'menu_icon'    => 'dashicons-admin-users',
-                'supports'=>
-                [
-                    'title',
-                    'editor',
-                    'thumbnail',
-                    'comments',
-                ]
-		)
-	);
-}
-add_action('init', 'agents_custom_post_type');
-
-
-//Templates pour les articles seuls des Properties
-function properties_custom_post_type() {
-	register_post_type('properties',
-		array(
-			'labels'      => array(
-				'name'          => __('Properties', 'textdomain'),
-				'singular_name' => __('Propertie', 'textdomain'),
-			),
-                'menu_position'=> 5,
-				'public'      => true,
-				'has_archive' => true,
-                'menu_icon'    => 'dashicons-building',
-                'taxonomies' => array('types','purposes'),
-                'supports'=>
-                [
-                    'title',
-                    'editor',
-                    'thumbnail',
-                    'comments',
-                ]
-		)
-	);
-}
-add_action('init', 'properties_custom_post_type');
-//Taxonomies pour les articles seuls des Properties
-//Category Types
-register_taxonomy('Types', ['properties'], [
-    'label' => __('Types', 'txtdomain'),
-    'hierarchical' => true,
-    'rewrite' => ['slug' => 'types'],
-    'show_admin_column' => true,
-    'show_in_rest' => true,
-    'labels' => [
-        'singular_name' => __('Types', 'txtdomain'),
-        'all_items' => __('All Types', 'txtdomain'),
-        'edit_item' => __('Edit Types', 'txtdomain'),
-        'view_item' => __('View Types', 'txtdomain'),
-        'update_item' => __('Update Types', 'txtdomain'),
-        'add_new_item' => __('Add New Types', 'txtdomain'),
-        'new_item_name' => __('New Types Name', 'txtdomain'),
-        'search_items' => __('Search Types', 'txtdomain'),
-        'parent_item' => __('Parent Types', 'txtdomain'),
-        'parent_item_colon' => __('Parent Types:', 'txtdomain'),
-        'not_found' => __('No Types found', 'txtdomain'),
-    ]
-]);
-register_taxonomy_for_object_type('Types', 'properties');
-
-//Category Types
-register_taxonomy('Purposes', ['properties'], [
-    'label' => __('Purposes', 'txtdomain'),
-    'hierarchical' => true,
-    'rewrite' => ['slug' => 'purposes'],
-    'show_admin_column' => true,
-    'show_in_rest' => true,
-    'labels' => [
-        'singular_name' => __('Purposes', 'txtdomain'),
-        'all_items' => __('All Purposes', 'txtdomain'),
-        'edit_item' => __('Edit Purposes', 'txtdomain'),
-        'view_item' => __('View Purposes', 'txtdomain'),
-        'update_item' => __('Update Purposes', 'txtdomain'),
-        'add_new_item' => __('Add New Purposes', 'txtdomain'),
-        'new_item_name' => __('New Purposes Name', 'txtdomain'),
-        'search_items' => __('Search Purposes', 'txtdomain'),
-        'parent_item' => __('Parent Purposes', 'txtdomain'),
-        'parent_item_colon' => __('Parent Purposes:', 'txtdomain'),
-        'not_found' => __('No Purposes found', 'txtdomain'),
-    ]
-]);
-register_taxonomy_for_object_type('Purposes', 'properties');
