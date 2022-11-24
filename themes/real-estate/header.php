@@ -10,10 +10,5 @@
 	<?php wp_body_open(); ?>
 	<header id="site-header">
 		<?php include('template-parts/navbar.php') ?>
-			<div class="container">
-				<div class="banner" style="background-image:url('http://localhost/wordpress/wp-content/uploads/2022/11/house2-3.jpg');">
-				<?php get_search_form(); ?>
-				</div>
-			</div>
 		
 	</header><!-- #masthead -->		

@@ -1,15 +1,21 @@
 /*Personalisation navbar*/
-nav ul{
+nav ul {
 	list-style-type:none;
-	display:flex;
-	margin-left:40%;
+    display:flex;
 	flex-flow: row-reverse;
+    margin: 0 auto;
+    padding-left: 23%;
 
+ 
 }
+.navbar-expand-lg .navbar-collapse{
+    justify-content: center;
+    align-items: center;
+}
+
 nav li{
 	padding-left:50px;
 	font-size:20px;
-	
 }
 nav li a {
 	color:black;
@@ -36,9 +42,8 @@ i.logo{
 padding-right:	150px;
 }
 #searchform{
-	padding-top:25.5%;
-	padding-left:30%;
-	margin-right:33%;
+    margin-right: 10px;
+
 }
 
 .home :is(#post-57,#post-54,#post-51,#post-43,#post-41,#post-39,#post-37,#post-35, #post-22){

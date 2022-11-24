@@ -5,14 +5,24 @@
 function real_estate_supports(){
     // Support de logo custom
     add_theme_support('custom-logo');
-    // Support des images des posts
-    add_theme_support('post-thumbnails');
     //Support des menus
     add_theme_support('menus');
-    add_image_size('post-thumbnail', 347, 260, true);
-    add_image_size('large', 255, 300, true);
-
+  
 }
+
+function real_estate_img_sizes(){
+    if ( in_category( '9' )) {
+        // different size for one category
+        set_post_thumbnail_size( 100, 150, true ); 
+    } elseif ( in_category( array( '5', '7' ) )) {
+        // different size for multiple categories
+        set_post_thumbnail_size( 150, 200, true ); 
+    } else {
+        // default size
+        set_post_thumbnail_size( 328, 228, true ); 
+    }
+}
+
 
 //Enrengistre  les styles et scripts
 function real_estate_register_assets() {
@@ -20,7 +30,7 @@ function real_estate_register_assets() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
     wp_enqueue_style('home', get_template_directory_uri() . './assets/css/home.css');
     // script file
-    wp_enqueue_script('main', get_template_directory_uri() .'./assets/js/main.js');
+    wp_enqueue_script('main', get_template_directory_uri() . './assets/js/main.js');
 
     //boostrap assets
         wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
