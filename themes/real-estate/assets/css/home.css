@@ -1,0 +1,56 @@
+/*Personalisation navbar*/
+nav ul{
+	list-style-type:none;
+	display:flex;
+	margin-left:40%;
+	flex-flow: row-reverse;
+
+}
+nav li{
+	padding-left:50px;
+	font-size:20px;
+	
+}
+nav li a {
+	color:black;
+	text-decoration:none
+}
+header#site-header{
+height:600px;
+}
+
+/*header*/
+/*banner*/
+.banner{
+	height:500px;
+	width:100vw;
+	margin-left:-105px;
+}
+
+
+[type="submit"]:not(:disabled){
+	color:white;
+	background-color:black;
+}
+i.logo{
+padding-right:	150px;
+}
+#searchform{
+	padding-top:25.5%;
+	padding-left:30%;
+	margin-right:33%;
+}
+
+.home :is(#post-57,#post-54,#post-51,#post-43,#post-41,#post-39,#post-37,#post-35, #post-22){
+	padding-right:0px; 
+	padding-left:0px;
+	object-fit:cover;
+	margin-top:50px;
+	text-align:center;
+
+}
+
+.home :is(#post-43,#post-41,#post-39) {
+	width:250px;
+	height:420px;
+}
