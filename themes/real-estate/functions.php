@@ -10,19 +10,34 @@ function real_estate_supports(){
   
 }
 
-function real_estate_img_sizes(){
-    if ( in_category( '9' )) {
-        // different size for one category
-        set_post_thumbnail_size( 100, 150, true ); 
-    } elseif ( in_category( array( '5', '7' ) )) {
-        // different size for multiple categories
-        set_post_thumbnail_size( 150, 200, true ); 
-    } else {
-        // default size
-        set_post_thumbnail_size( 328, 228, true ); 
-    }
-}
 
+function real_estate_img_sizes(){
+    if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support('post-thumbnails');
+    add_image_size( 'About', 100, 150, true );
+    add_image_size('Houses', 150, 200, true );
+    add_image_size( 'Agents', 328, 228, true );
+    
+    }
+
+    if ( is_archive() ) {
+        $current_category = single_cat_title("", false);
+    if ( in_category( '$current_category' )) {
+        // different size for one category
+      set_post_thumbnail('About', [52, 55, 33]); 
+
+    } elseif ( in_category( '$current_category' )) {
+      set_post_thumbnail('Houses', [50, 49, 48] ); 
+
+    } elseif ( in_category( '$current_category' )) {
+        set_post_thumbnail('Agents', [175, 30, 31]); 
+        
+    } else  {
+        // default size
+      set_post_thumbnail_size('500 , 333'); 
+    }
+  }
+}
 
 //Enrengistre  les styles et scripts
 function real_estate_register_assets() {
