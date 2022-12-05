@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <body>
+    <h1 class="d-flex justify-content-center mt-5" style="font-family:Roboto;">Real Estate Thème</h1>
     <h2 class="d-flex justify-content-around"><?php bloginfo( 'description' ); ?></h2>				
         <main id="site-content">
             <div class="container" style="display:flex; flex-flow:row wrap; max-width:1000px">
@@ -16,7 +17,7 @@
                             while ( $arr_posts->have_posts() ) :
                                 $arr_posts->the_post();
                     ?>     
-                    
+                   
                     <?php include('template-parts/gallery-card.php'); ?>
                     <?php endwhile;
                     endif; ?>
