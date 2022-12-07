@@ -12,7 +12,7 @@ if ( $arr_posts->have_posts() ) :
     while ( $arr_posts->have_posts() ) :
         $arr_posts->the_post();
         ?>
-        <div class="row" style="margin-bottom:107px;">
+        <div class="row" style="">
             <div class="col-8 justify-content-start">
                 <h1 class="d-flex justify-content-start"><?php the_title() ?></h1>
                     <h2 class="d-flex justify-content-start">About</h2>
