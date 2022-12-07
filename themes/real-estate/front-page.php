@@ -1,3 +1,4 @@
+<!-- Page home static  -->
 <?php get_header(); ?>
 <body>
     <h1 class="d-flex justify-content-center mt-5" style="font-family:Roboto;">Real Estate Thème</h1>

@@ -1,3 +1,6 @@
+/*general*/
+/*header*/
+/*navbar*/
 .navbar{
 	background-color: transparent;
 	border-bottom: 1px solid #e5e5e5;
@@ -7,16 +10,36 @@
 	position: relative;
 	z-index: 1000;
 }
-
 .navbar-expand-md .navbar-collapse{
 	display: flex;
 	justify-content: center;
 	font-size: 1.25em;
 	margin-left: 20%;
-
-
 }
 
+/*banner*/
+.banner{
+	height:500px;
+	width:100vw;
+	margin-left:-105px;
+}
+
+/*searchform*/
+[type="submit"]:not(:disabled){
+	color:white;
+	background-color:black;
+}
+i.logo{
+	padding-right:	150px;
+}
+.form-control{
+    margin-right: 10px;
+	width:15%;
+}
+
+
+/*Posts*/
+/*posts links*/
 a.more-link{
 	color: white;
 	background-color: black;
@@ -35,38 +58,4 @@ a.page-link{
 	color: black;
 }
 
-/*header*/
-/*banner*/
-.banner{
-	height:500px;
-	width:100vw;
-	margin-left:-105px;
-}
-
-
-[type="submit"]:not(:disabled){
-	color:white;
-	background-color:black;
-}
-i.logo{
-padding-right:	150px;
-}
-.form-control{
-    margin-right: 10px;
-	width:15%;
-
-}
-
-.home :is(#post-57,#post-54,#post-51,#post-43,#post-41,#post-39,#post-37,#post-35, #post-22){
-	padding-right:0px; 
-	padding-left:0px;
-	object-fit:cover;
-	margin-top:50px;
-	text-align:center;
-
-}
-
-.home :is(#post-43,#post-41,#post-39) {
-	width:250px;
-	height:420px;
-}
+/*home posts*/

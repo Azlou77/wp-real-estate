@@ -22,6 +22,12 @@ function real_estate_img_sizes(){
     
 }
 
+//Filter excerpt
+function wpdocs_custom_excerpt_length( $length ) {
+	return 10;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
 //Register styles, scripts, fonts
 function real_estate_register_assets() {
     // style files
