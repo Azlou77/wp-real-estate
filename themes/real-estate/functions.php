@@ -5,7 +5,7 @@
 function real_estate_supports(){
     // Support logo custom
     add_theme_support('custom-logo');
-    // Support reguster menu
+    // Support register menu
     register_nav_menu('header', 'En tête du menu');
     register_nav_menu('footer', 'Pied de page');
     //Support menus
@@ -54,7 +54,11 @@ function real_estate_register_assets() {
 }
 
 
-
+//Register sidebar
+register_sidebar( array(
+	'id' => 'blog-sidebar',
+	'name' => 'Blog',
+) );
  
 
 // Add themes parameters

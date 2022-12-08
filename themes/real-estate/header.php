@@ -17,7 +17,7 @@
 	<body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<header>
-	<nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+	<nav class="navbar navbar-expand-md navbar-light bg-light color-header" role="navigation" style="background-color: <?= get_theme_mod('header_background'); ?>!important">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
