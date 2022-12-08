@@ -14,4 +14,3 @@
         <a href="<?php the_permalink() ?>" class="btn btn-outline-secondary">Voir le détail du bien</a>
     </div>
 </div>
-

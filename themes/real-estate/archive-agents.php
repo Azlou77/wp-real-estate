@@ -1,5 +1,6 @@
 <!-- Templates for Agents  -->
 <?php get_header(); ?>
+<
 <body>
     <h1 class="d-flex justify-content-center" style="font-family:Roboto;">Real Estate Thème</h1>	
         <main id="site-content">

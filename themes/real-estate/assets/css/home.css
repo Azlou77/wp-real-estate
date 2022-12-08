@@ -60,3 +60,6 @@ a.page-link{
 }
 
 /*home posts*/
+.site__sidebar__widget{
+	margin-top: 20px;
+}

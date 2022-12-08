@@ -33,6 +33,7 @@ function real_estate_register_assets() {
     // style files
     wp_enqueue_style( 'style', get_stylesheet_uri() );
     wp_enqueue_style('home', get_template_directory_uri() . './assets/css/home.css');
+    wp_enqueue_style('properties', get_template_directory_uri() . './assets/css/properties.css');
 
     // script files
     wp_enqueue_script('main', get_template_directory_uri() . './assets/js/main.js');
@@ -58,6 +59,10 @@ function real_estate_register_assets() {
 register_sidebar( array(
 	'id' => 'blog-sidebar',
 	'name' => 'Blog',
+  'before_widget'  => '<div class="site__sidebar__widget %2$s">',
+  'after_widget'  => '</div>',
+  'before_title' => '<p class="site__sidebar__widget__title">',
+  'after_title' => '</p>',
 ) );
  
 
