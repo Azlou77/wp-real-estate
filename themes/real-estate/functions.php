@@ -65,6 +65,12 @@ register_sidebar( array(
   'after_title' => '</p>',
 ) );
  
+//Register pagination
+the_posts_pagination( array(
+  'mid_size' => 2,
+  'prev_text' => __( 'Previous Page', 'textdomain' ),
+  'next_text' => __( 'Next Page', 'textdomain' ),
+  ) );
 
 // Add themes parameters
 add_action('customize_register','real_estate_customize_register');
