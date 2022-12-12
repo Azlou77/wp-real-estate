@@ -17,8 +17,10 @@
                             $args = array(
                                 'post_type' => 'post',
                                 'post_status' => 'publish',
-                                'cat' => ['6'],
-                                'posts_per_page' => 3                            );
+                                'cat' => '6',
+                                'posts_per_page' => 3,
+                            
+                            );
                             $arr_posts = new WP_Query( $args );
                             
                     if ( $arr_posts->have_posts() ) :
@@ -31,9 +33,8 @@
                     endif; ?>
                 </div>
             </div>
-            
-    <!-- <a href="<?= get_post_type_archive_link('post') ?>">Voir les denrières actualités</a> -->
-
+            <h2>Les derniers actualités</h2>
+            <?php  real_estate_recent_posts();?>
         </main>
     </body>
 <?php get_footer() ?>

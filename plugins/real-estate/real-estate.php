@@ -26,6 +26,7 @@ function agents_custom_post_type() {
                     'editor',
                     'thumbnail',
                     'comments',
+                    
                 ]
 		)
 	);

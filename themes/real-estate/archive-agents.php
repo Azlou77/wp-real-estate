@@ -25,7 +25,7 @@
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'cat' => ['5'],
-                        'posts_per_page' => 4
+                        'posts_per_page' => 6
                     );
                
 
@@ -37,7 +37,8 @@
                             $arr_posts->the_post(); ?>
                     <?php include('template-parts/card.php'); ?>
                     <?php endwhile;
-                    endif; ?>        
+                    endif; ?>     
+                    <?php  real_estate_recent_comments();?>   
         </main>
     </div> 
   

@@ -1,3 +1,4 @@
+<!-- Page for post, custom posts single  -->
 <?php get_header(); ?>
 <div class="row">
     <div class="col-sm-12">
@@ -24,8 +25,11 @@
             <div class="entry-content">
                 <?php the_content(); ?>
             </div>
+            
 
         </article>
+     
+        </div>
 
     <?php endwhile; endif; ?>
 

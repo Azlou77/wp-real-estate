@@ -32,7 +32,7 @@
                                 $arr_posts->the_post();
                     ?>     
                    
-                    <?php include('template-parts/card.php'); ?>
+                    <?php include('template-parts/card.php'); ?>    
                     <?php endwhile;
                     endif; ?>   
                 </div>

@@ -53,6 +53,39 @@ function real_estate_register_assets() {
     wp_enqueue_script('bootstrap');
 
 }
+//Display recent comments
+function real_estate_recent_comments(){
+    $args = array(
+        'number' => 3,
+        'status' => 'approve',
+        'post_status' => 'publish',
+        'post_type' => 'post',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
+        'suppress_filters' => true
+    );
+    $recent_comments = get_comments($args);
+    foreach($recent_comments as $recent){
+        echo '<li><a href="' . get_permalink($recent->comment_post_ID) . '">' . $recent->comment_author . '</a></li>';
+    }
+}
+//Display recent posts
+function real_estate_recent_posts(){
+    $args = array(
+        'numberposts' => 3,
+        'post_type' => 'post',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'post_status' => 'publish',
+        'suppress_filters' => true
+    );
+    $recent_posts = wp_get_recent_posts($args);
+    foreach($recent_posts as $recent){
+        echo '<li><a href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"] . '</a></li>';
+    }
+}
+
 
 
 //Register sidebar
