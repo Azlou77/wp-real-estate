@@ -19,6 +19,7 @@ function real_estate_img_sizes(){
     set_post_thumbnail_size( 100, 150, true );
     add_image_size('houses', 150, 200, true );
     add_image_size( 'agents', 328, 228, true );
+
     
 }
 
@@ -34,7 +35,7 @@ function real_estate_register_assets() {
     wp_enqueue_style( 'style', get_stylesheet_uri() );
     wp_enqueue_style('home', get_template_directory_uri() . './assets/css/home.css');
     wp_enqueue_style('properties', get_template_directory_uri() . './assets/css/properties.css');
-
+    wp_enqueue_style('single', get_template_directory_uri() . './assets/css/single.css');
     // script files
     wp_enqueue_script('main', get_template_directory_uri() . './assets/js/main.js');
 

@@ -1,0 +1,12 @@
+/*general*/
+h1.single-entry-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.entry-content{
+    width: 600px;
+}
+.entry-content :is(h1,h3) {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
