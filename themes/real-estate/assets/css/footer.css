@@ -1,0 +1,20 @@
+.navigation.pagination{
+	display: flex;
+	justify-content: center;
+
+}
+.navigation.pagination .nav-links{
+
+    border: 1px solid black;
+}
+.prev.page-numbers a , .next.page-numbers a{
+    background-color: black;
+    color: white;
+}
+.navigation.pagination a{
+ 
+    text-decoration: none;
+    font-size: 17px;
+    list-style-type: none;
+    border: 1px solid black;
+}

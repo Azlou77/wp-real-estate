@@ -1,6 +1,8 @@
 <footer id="site-footer">
 			<div class="container">
-      <?php posts_nav_link(); ?>
+      <?php the_posts_pagination(); ?>
+</nav>
+     
 				<!-- Footer -->
 <footer class="text-center text-lg-start bg-white text-muted">
 	
