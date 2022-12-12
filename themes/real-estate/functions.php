@@ -86,6 +86,36 @@ function real_estate_recent_posts(){
     }
 }
 
+//Filter by category posts
+function real_estate_filter_posts_by_category() {
+  if (is_category('Agents')) : 
+    $args = array(
+      'post_type' => 'post',
+      'post_status' => 'publish',
+      'posts_per_page' => 9,
+      'cat' => 5,
+    );
+    elseif (is_category('Houses')) :
+      $args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => 9,
+        'cat' => 4,
+      ); 
+    else: 
+      echo 'No  category found';
+    endif;
+      $arr_posts = new WP_Query( $args );                            
+      if ( $arr_posts->have_posts() ) :
+              while ( $arr_posts->have_posts() ) :
+                  $arr_posts->the_post();
+      ?>     
+     
+      <?php include('template-parts/card.php'); ?>
+      <?php endwhile;
+      endif;
+  }
+
 
 
 //Register sidebar
@@ -149,5 +179,3 @@ function register_navwalker(){
 add_action( 'after_setup_theme', 'register_navwalker' );
 add_action( 'after_setup_theme', 'real_estate_supports' );
 add_action('wp_enqueue_scripts', 'real_estate_register_assets');
-
-

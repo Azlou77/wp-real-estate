@@ -14,22 +14,8 @@
                 }
                 </style>
                     <?php
-                            $args = array(
-                                'post_type' => 'post',
-                                'post_status' => 'publish',
-                                'posts_per_page' => 3,
-                                'cat' => 5,
-                            );
-                            $arr_posts = new WP_Query( $args );
-                            
-                    if ( $arr_posts->have_posts() ) :
-                            while ( $arr_posts->have_posts() ) :
-                                $arr_posts->the_post();
-                    ?>     
-                   
-                    <?php include('template-parts/card.php'); ?>
-                    <?php endwhile;
-                    endif; ?>
+                          real_estate_filter_posts_by_category();
+                    ?>
                 </div>
             </div>
             <h2>Les derniers actualités</h2>
