@@ -1,21 +1,17 @@
 <?php get_header() ?>
+<style>
+    .bcontent {
+        margin-top: 10px;
+        margin-left: 0%;
+    }
+</style>
 <!-- Cette page affiche de détail d'un bien -->
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <div class="card border shadow mb-4">
-      <div class="card-header bg-light">
-        <h1><?php the_title() ?></h1>
-      </div>
-      <div class="card-body">
-        
-        <img src="<?php the_post_thumbnail_url(); ?>" alt="" class="card-img-top" style="width:100%; height:auto;">
-      </div>
-      <div class="card-footer bg-light">
-        <?php the_content() ?>
-      </div>
-      <?php  comments_template(); ?>
-    </div>  
-    </div>
-<?php endwhile;
+<?php
+if (have_posts()) : 
+    while (have_posts()) : the_post(); ?>
+    <?php include 'template-parts/card-horizontale.php'; ?>
+    <?php endwhile; 
 endif; ?>
-
+        
+<?php  comments_template(); ?>
 <?php get_footer() ?>

@@ -110,6 +110,3 @@ register_taxonomy_for_object_type('Purposes', 'properties');
 }
 add_action('init', 'agents_custom_post_type');
 add_action('init', 'properties_custom_post_type');
-
-    
-

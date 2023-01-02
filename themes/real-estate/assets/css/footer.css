@@ -1,3 +1,5 @@
+
+/*Pagination*/
 nav.navigation.pagination{
 	display: flex;
 	justify-content: center;
@@ -21,11 +23,36 @@ nav.navigation.pagination{
 	background-color: #ddd;
 }
 
-ol.comment__list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+/*Comments*/
+#div-comment-2{
+	display: flex;
+	flex-flow: row wrap;
+	width: 50%;
 }
+#div-comment-2 .comment-meta.commentmetadata{
+	padding-top: 30px;
+	margin-left: -87px;
+}
+
+#div-comment-2 p{
+	margin-left: 80px;
+	margin-right: 2%;
+
+}
+
+ol.comment__list{
+	list-style: none;
+	text-decoration: none;
+}
+
 ol.comment__list img{
 	border-radius: 50%;
+	vertical-align: top;
 }
+
+#commentform label{
+	display: block;;
+}
+
+
+

@@ -14,26 +14,43 @@
                 }
                 </style>
                     <?php
-                            $args = array(
-                                'post_type' => 'post',
-                                'post_status' => 'publish',
-                                'posts_per_page' => 3,
-                                'cat' => 5,
-                            );
-                            $arr_posts = new WP_Query( $args );
-                            
-                    if ( $arr_posts->have_posts() ) :
-                            while ( $arr_posts->have_posts() ) :
-                                $arr_posts->the_post();
-                    ?>     
-                   
+                        $args = array(
+                            'post_type' => 'post',
+                            'post_status' => 'publish',
+                            'posts_per_page' => 3,
+                            'cat' => 5,
+                        );
+                        $arr_posts = new WP_Query( $args ); 
+                            if ( $arr_posts->have_posts() ) :
+                                    while ( $arr_posts->have_posts() ) :
+                                        $arr_posts->the_post();?>
+
                     <?php include('template-parts/card.php'); ?>
-                    <?php endwhile;
-                    endif; ?>
-                </div>
+                        <?php endwhile;
+                            endif;
+                            wp_reset_postdata(); ?>
             </div>
-            <h2>Les derniers actualités</h2>
-            <?php  real_estate_recent_posts();?>
-        </main>
-    </body>
+
+            <h2 class="d-flex justify-content-center">Les derniers actualités</h2>
+            <div class="grid-container">
+                    <?php $args2 = array(
+                            'posts_per_page' => 3,
+                            'post_type' => 'post',
+                            'orderby' => 'date',
+                            'order' => 'DESC',
+                            'post_status' => 'publish',
+                            'suppress_filters' => true
+                        );
+                        $recent_posts = new WP_Query( $args2 );       
+                            if ( $recent_posts->have_posts() ) :
+                                while ( $recent_posts->have_posts() ) :
+                                    $recent_posts->the_post();?>
+
+                        <?php include('template-parts/card.php'); ?>
+                            <?php endwhile;
+                            endif; 
+                            wp_reset_postdata(); ?>
+            </div>
+    </main>
+</body>
 <?php get_footer() ?>

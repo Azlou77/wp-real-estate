@@ -17,7 +17,7 @@
                     grid-gap:20px;
                     width:765px;
                     margin-left: 27%;
-                    margin-top:-62%;
+                    margin-top:-55%;
                 }
                 </style>
                 <?php
@@ -37,8 +37,11 @@
                             $arr_posts->the_post(); ?>
                     <?php include('template-parts/card.php'); ?>
                     <?php endwhile;
-                    endif; ?>     
-                    <?php  real_estate_recent_comments();?>   
+                    endif; ?>
+                    <div class="recents-comments">
+                        <?php  real_estate_recent_comments();?>   
+                    </div>     
+
         </main>
     </div> 
   
