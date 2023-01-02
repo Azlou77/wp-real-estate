@@ -37,6 +37,7 @@ function real_estate_register_assets() {
     wp_enqueue_style('properties', get_template_directory_uri() . './assets/css/properties.css');
     wp_enqueue_style('single', get_template_directory_uri() . './assets/css/single.css');
     wp_enqueue_style('footer', get_template_directory_uri() . './assets/css/footer.css');
+    wp_enqueue_style('form', get_template_directory_uri() . './assets/css/form.css');
     // script files
     wp_enqueue_script('main', get_template_directory_uri() . './assets/js/main.js');
 

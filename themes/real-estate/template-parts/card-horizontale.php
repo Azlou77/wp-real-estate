@@ -1,4 +1,5 @@
 
+<!-- Cards with pictures horizontales -->
 <div class="container bcontent">
     <div class="card" style="width: 1000px;">
         <div class="row no-gutters">

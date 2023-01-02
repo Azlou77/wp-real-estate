@@ -1,0 +1,14 @@
+/* Contact Form */
+.form-title{
+    text-transform: uppercase;
+    font-family: Poppins-Bold sans-serif;
+}
+.form-page{   
+    width: 30%;
+    margin: 0 auto;
+}
+.form-submit{
+    width:25%;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
