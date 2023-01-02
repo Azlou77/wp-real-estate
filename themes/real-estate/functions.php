@@ -38,9 +38,10 @@ function real_estate_register_assets() {
     wp_enqueue_style('single', get_template_directory_uri() . './assets/css/single.css');
     wp_enqueue_style('footer', get_template_directory_uri() . './assets/css/footer.css');
     wp_enqueue_style('form', get_template_directory_uri() . './assets/css/form.css');
+    
     // script files
-    wp_enqueue_script('main', get_template_directory_uri() . './assets/js/main.js');
-
+   
+    wp_enqueue_script('script', get_template_directory_uri() . './js/script.js');
     //boostrap assets
     //bootstrap css
     wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css');
@@ -54,8 +55,8 @@ function real_estate_register_assets() {
 
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
-
 }
+
 //Display recent comments
 function real_estate_recent_comments(){
     $args = array(
